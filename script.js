@@ -180,6 +180,7 @@ const zhTranslations = {
     ],
     "-academic-service": [
       [
+        "2026 年中国图象图形学学术会议 Poster 展示。",
         "三维点云计算中的神经网络设计与优化，IEEE WCCI Tutorials，2024。",
         "中国图象图形学学术会议 Poster 展示，2025。",
         "粤港澳大湾区感知计算融合学术论坛学术报告，2025。",

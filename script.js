@@ -208,6 +208,7 @@ const zhTranslations = {
     ],
   },
   moreButtons: {
+    "-publications": ["更多论文", "收起论文"],
     "-news": ["更多动态", "收起动态"],
     "-patents": ["更多专利", "收起专利"],
     "-standards": ["更多标准", "收起标准"],

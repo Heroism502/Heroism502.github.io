@@ -550,10 +550,6 @@ button:hover {
   display: none;
 }
 
-.collapsible-list:not(.is-expanded) li:nth-child(n + 6) {
-  display: none;
-}
-
 .more-button {
   margin: 0.25em 0 1em;
   padding: 0;
@@ -636,6 +632,10 @@ button:hover {
 .resource-item p {
   margin-top: 0.35em;
   margin-bottom: 0;
+}
+
+.resource-note {
+  color: #494e52;
 }
 
 .member-card {

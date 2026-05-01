@@ -4,7 +4,6 @@ const STORAGE_KEY = "liang-xie-homepage-unlocked";
 const form = document.querySelector("#access-form");
 const input = document.querySelector("#access-code");
 const message = document.querySelector("#access-message");
-const lockButton = document.querySelector("#lock-button");
 const protectedSite = document.querySelector(".protected");
 
 function setUnlocked(unlocked) {
@@ -39,16 +38,10 @@ form?.addEventListener("submit", async (event) => {
     message.textContent = "";
     input.value = "";
     setUnlocked(true);
-    document.querySelector("#about")?.scrollIntoView();
+    document.querySelector("#about-me")?.scrollIntoView();
     return;
   }
 
   message.textContent = "Incorrect access code.";
   input.select();
-});
-
-lockButton?.addEventListener("click", () => {
-  setUnlocked(false);
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  setTimeout(() => input?.focus(), 250);
 });

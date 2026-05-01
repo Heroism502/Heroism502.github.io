@@ -67,7 +67,7 @@ const zhTranslations = {
     [
       ".about-text",
       [
-        "我现任广东工业大学计算机学院助理教授。硕士毕业于中山大学，博士毕业于北京大学电子与计算机工程学院。我的研究方向聚焦三维数据压缩与重建，重点包括点云压缩、三维高斯表示与编码、感知质量建模、多模态基础模型以及具身智能。",
+        "我现任广东工业大学计算机学院助理教授。硕士毕业于中山大学，博士毕业于北京大学信息工程学院。我的研究方向聚焦三维数据压缩与重建，重点包括点云压缩、三维高斯表示与编码、感知质量建模、多模态基础模型以及具身智能。",
         "我已在 IEEE TPAMI、IEEE TBC、IEEE TIM、APSIPA Transactions、AAAI、ACM MM、ICRA、DCC 等主流期刊和会议发表论文 20 余篇。作为第一提案人，我向 AVS/IEEE DCSC 提交了 25 项以上标准化提案，其中 10 余项已被采纳，另有多项处于探索实验阶段。此外，我已申请 15 项与视觉媒体编码、点云压缩、多模态数据处理和三维重建相关的发明专利。",
         "我积极参与科研软件、数据集建设和学术服务工作。曾主导开发 LearningPCC 和 PCHMVision 等开源点云压缩库，并构建 PKU-DPCC 动态点云压缩数据集、PKU-JND 点云压缩恰可察觉失真建模数据集、PKU-GS 面向无人机采集的高斯点云数据集等大规模数据集。我也担任多媒体与计算机视觉领域主流期刊和会议审稿人，包括 TPAMI、TIP、TMM、TCE、AAAI、ACM MM 和 ICRA 等。",
       ],
@@ -418,7 +418,12 @@ form?.addEventListener("submit", async (event) => {
 document.querySelectorAll(".collapsible-list").forEach((list) => {
   const visibleCount = Number(list.dataset.visible || 5);
   const items = Array.from(list.children);
-  const previousButton = list.previousElementSibling?.querySelector(".more-button");
+  let previousElement = list.previousElementSibling;
+  let previousButton = null;
+  while (previousElement && previousElement.tagName !== "H1") {
+    previousElement = previousElement.previousElementSibling;
+  }
+  previousButton = previousElement?.querySelector(".more-button");
   const nextButton = list.nextElementSibling?.classList.contains("more-button")
     ? list.nextElementSibling
     : null;

@@ -247,25 +247,14 @@ button:hover {
   color: #5c6266;
 }
 
-.greedy-nav button {
-  position: absolute;
-  right: 0;
-  display: none;
-  height: 100%;
-  padding: 0 0.5rem;
-  border: 0;
-  outline: none;
-  background-color: #7a8288;
-  color: #fff;
-}
-
 .greedy-nav .visible-links {
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .greedy-nav .visible-links li {
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
 }
 
 .greedy-nav .visible-links li:first-child {
@@ -294,33 +283,6 @@ button:hover {
 
 .greedy-nav .visible-links a:hover::before {
   transform: scaleX(1);
-}
-
-.navicon {
-  position: relative;
-  display: block;
-  width: 28px;
-  height: 4px;
-  margin: auto;
-  background: #fff;
-}
-
-.navicon::before,
-.navicon::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 28px;
-  height: 4px;
-  background: #fff;
-}
-
-.navicon::before {
-  top: -8px;
-}
-
-.navicon::after {
-  bottom: -8px;
 }
 
 #main {
@@ -594,12 +556,6 @@ h1::before,
 }
 
 @media (max-width: 57.75em) {
-  .greedy-nav .visible-links {
-    max-width: calc(100vw - 4em);
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
   .page {
     margin-top: 1em;
   }

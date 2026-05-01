@@ -16,8 +16,11 @@ Put these files in the repository root:
 index.html
 styles.css
 script.js
+pic.png
 robots.txt
 .nojekyll
+README.md
+.gitignore
 ```
 
 After deployment, the free GitHub Pages address will be:

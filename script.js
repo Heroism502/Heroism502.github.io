@@ -214,7 +214,7 @@ const zhTranslations = {
   },
 };
 
-let currentLanguage = getStoredLanguage();
+let currentLanguage = "en";
 
 function setUnlocked(unlocked) {
   document.body.classList.toggle("unlocked", unlocked);
@@ -257,16 +257,16 @@ function rememberHtml(element) {
   }
 }
 
-function setHtml(element, zhHtml) {
+function setHtml(element, zhHtml, language = currentLanguage) {
   if (!element) return;
   rememberHtml(element);
-  element.innerHTML = currentLanguage === "zh" ? zhHtml : element.dataset.enHtml;
+  element.innerHTML = language === "zh" ? zhHtml : element.dataset.enHtml;
 }
 
-function setGroupHtml(selector, zhItems) {
+function setGroupHtml(selector, zhItems, language) {
   document.querySelectorAll(selector).forEach((element, index) => {
     if (zhItems[index] !== undefined) {
-      setHtml(element, zhItems[index]);
+      setHtml(element, zhItems[index], language);
     }
   });
 }
@@ -284,23 +284,23 @@ function getSectionElements(id, tagName) {
   return elements;
 }
 
-function setSectionLists(id, zhLists) {
+function setSectionLists(id, zhLists, language) {
   const lists = getSectionElements(id, "UL");
   if (Array.isArray(zhLists[0])) {
     lists.forEach((list, listIndex) => {
-      setGroupItems(list, zhLists[listIndex] || []);
+      setGroupItems(list, zhLists[listIndex] || [], language);
     });
     return;
   }
   if (lists[0]) {
-    setGroupItems(lists[0], zhLists);
+    setGroupItems(lists[0], zhLists, language);
   }
 }
 
-function setGroupItems(list, zhItems) {
+function setGroupItems(list, zhItems, language) {
   Array.from(list.children).forEach((item, index) => {
     if (zhItems[index] !== undefined) {
-      setHtml(item, zhItems[index]);
+      setHtml(item, zhItems[index], language);
     }
   });
 }
@@ -320,7 +320,7 @@ function setHeadingLabel(id, label) {
   }
 }
 
-function setMoreButtonLabels() {
+function setMoreButtonLabels(language = currentLanguage) {
   Object.entries(zhTranslations.moreButtons).forEach(([id, zhLabels]) => {
     const heading = document.getElementById(id);
     const button = heading?.querySelector(".more-button");
@@ -331,7 +331,7 @@ function setMoreButtonLabels() {
       button.dataset.enLess = button.dataset.less;
     }
 
-    const [more, less] = currentLanguage === "zh"
+    const [more, less] = language === "zh"
       ? zhLabels
       : [button.dataset.enMore, button.dataset.enLess];
     button.dataset.more = more;
@@ -342,6 +342,7 @@ function setMoreButtonLabels() {
 }
 
 function applyLanguage(language) {
+  language = language === "zh" ? "zh" : "en";
   currentLanguage = language;
   storeLanguage(language);
 
@@ -361,27 +362,27 @@ function applyLanguage(language) {
   Object.entries(sectionLabels[language]).forEach(([id, label]) => setHeadingLabel(id, label));
 
   zhTranslations.single.forEach(([selector, zhHtml]) => {
-    setHtml(document.querySelector(selector), zhHtml);
+    setHtml(document.querySelector(selector), zhHtml, language);
   });
 
   zhTranslations.groups.forEach(([selector, zhItems]) => {
-    setGroupHtml(selector, zhItems);
+    setGroupHtml(selector, zhItems, language);
   });
 
   Object.entries(zhTranslations.sectionParagraphs).forEach(([id, zhItems]) => {
     const paragraphs = getSectionElements(id, "P");
     paragraphs.forEach((paragraph, index) => {
       if (zhItems[index] !== undefined) {
-        setHtml(paragraph, zhItems[index]);
+        setHtml(paragraph, zhItems[index], language);
       }
     });
   });
 
   Object.entries(zhTranslations.lists).forEach(([id, zhItems]) => {
-    setSectionLists(id, zhItems);
+    setSectionLists(id, zhItems, language);
   });
 
-  setMoreButtonLabels();
+  setMoreButtonLabels(language);
 
   if (languageButton) {
     languageButton.textContent = language === "zh" ? "EN" : "中文";
@@ -445,8 +446,14 @@ document.querySelectorAll(".collapsible-list").forEach((list) => {
   render();
 });
 
-languageButton?.addEventListener("click", () => {
+function toggleLanguage() {
   applyLanguage(currentLanguage === "zh" ? "en" : "zh");
-});
+}
 
-applyLanguage(currentLanguage);
+function initLanguageToggle() {
+  currentLanguage = getStoredLanguage();
+  applyLanguage(currentLanguage);
+}
+
+window.toggleLanguage = toggleLanguage;
+initLanguageToggle();

@@ -624,6 +624,26 @@ button:hover {
   gap: 1em;
 }
 
+.resource-list {
+  display: grid;
+  gap: 1em;
+}
+
+.resource-item {
+  padding: 1em;
+  border: 1px solid #f2f3f3;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.resource-item h3 {
+  margin-top: 0;
+}
+
+.resource-item p {
+  margin-bottom: 0;
+}
+
 .member-card {
   min-height: 120px;
   padding: 1em;

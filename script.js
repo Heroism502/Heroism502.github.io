@@ -45,3 +45,32 @@ form?.addEventListener("submit", async (event) => {
   message.textContent = "Incorrect access code.";
   input.select();
 });
+
+document.querySelectorAll(".collapsible-list").forEach((list) => {
+  const visibleCount = Number(list.dataset.visible || 5);
+  const items = Array.from(list.children);
+  const button = list.nextElementSibling?.classList.contains("more-button")
+    ? list.nextElementSibling
+    : null;
+
+  if (!button || items.length <= visibleCount) {
+    button?.classList.add("is-hidden");
+    return;
+  }
+
+  let expanded = false;
+
+  function render() {
+    items.forEach((item, index) => {
+      item.classList.toggle("is-hidden", !expanded && index >= visibleCount);
+    });
+    button.textContent = expanded ? button.dataset.less : button.dataset.more;
+  }
+
+  button.addEventListener("click", () => {
+    expanded = !expanded;
+    render();
+  });
+
+  render();
+});

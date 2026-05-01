@@ -355,7 +355,7 @@ button:hover {
 .author__bio {
   margin: 0 0 1em;
   color: #494e52;
-  font-size: 1.2em;
+  font-size: 1.25em;
   line-height: 1.45;
 }
 
@@ -521,6 +521,28 @@ button:hover {
   margin: 0 0 0.5em;
 }
 
+.is-hidden {
+  display: none;
+}
+
+.more-button {
+  margin: 0.25em 0 1em;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #224b8d;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.more-button:hover {
+  background: transparent;
+  color: #1a386a;
+}
+
 h1::before,
 .anchor::before {
   content: "";
@@ -588,6 +610,7 @@ h1::before,
   .author__bio {
     margin-top: 10px;
     margin-bottom: 20px;
+    font-size: 1.35em;
   }
 
   .author__urls-wrapper {

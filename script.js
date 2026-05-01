@@ -63,6 +63,7 @@ document.querySelectorAll(".collapsible-list").forEach((list) => {
   let expanded = false;
 
   function render() {
+    list.classList.toggle("is-expanded", expanded);
     items.forEach((item, index) => {
       item.classList.toggle("is-hidden", !expanded && index >= visibleCount);
     });

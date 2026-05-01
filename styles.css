@@ -525,6 +525,10 @@ button:hover {
   display: none;
 }
 
+.collapsible-list:not(.is-expanded) li:nth-child(n + 6) {
+  display: none;
+}
+
 .more-button {
   margin: 0.25em 0 1em;
   padding: 0;

@@ -347,11 +347,16 @@ button:hover {
 
 .sidebar .author__name {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 1.2em;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #494e52;
 }
 
 .author__bio {
-  margin: 0;
+  margin: 0 0 1.4em;
+  color: #494e52;
+  font-size: 1.35em;
+  line-height: 1.45;
 }
 
 .author__urls-wrapper {
@@ -378,22 +383,80 @@ button:hover {
 }
 
 .author__urls li {
+  position: relative;
+  margin-bottom: 0.65em;
+  color: #494e52;
+  font-size: 1.25em;
+  line-height: 1.35;
   white-space: nowrap;
 }
 
 .author__urls a {
-  display: block;
-  margin-bottom: 5px;
-  padding-top: 2px;
-  padding-right: 5px;
-  padding-bottom: 2px;
+  display: inline;
+  margin-bottom: 0;
+  padding: 0;
   color: inherit;
-  font-size: 1em;
   text-decoration: none;
 }
 
 .author__urls a:hover {
   text-decoration: underline;
+}
+
+.icon-row {
+  padding-left: 1.55em;
+}
+
+.icon-row::before {
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.1em;
+  color: #111;
+  font-size: 1em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.icon-location::before {
+  content: "●";
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg) scale(0.82);
+}
+
+.icon-university::before {
+  content: "▰";
+}
+
+.icon-university::after {
+  content: "";
+  position: absolute;
+  left: 0.1em;
+  top: 0.8em;
+  width: 1em;
+  height: 0.18em;
+  border-top: 0.14em solid #111;
+  border-bottom: 0.14em solid #111;
+}
+
+.icon-email::before {
+  content: "✉";
+}
+
+.icon-scholar::before {
+  content: "▰";
+  transform: rotate(-8deg);
+}
+
+.icon-scholar::after {
+  content: "";
+  position: absolute;
+  left: 0.32em;
+  top: 0.72em;
+  width: 0.55em;
+  height: 0.2em;
+  border-radius: 0 0 0.4em 0.4em;
+  background: #111;
 }
 
 .author__urls_sm {
@@ -469,7 +532,7 @@ h1::before,
   }
 
   .sidebar .author__name {
-    font-size: 1.4em;
+    font-size: 1.8em;
   }
 }
 
@@ -481,9 +544,9 @@ h1::before,
   }
 
   .sidebar {
-    width: 15.2542372881%;
+    width: 23%;
     float: left;
-    margin-right: 1.6949152542%;
+    margin-right: 2%;
   }
 
   .profile_box {
@@ -542,10 +605,10 @@ h1::before,
   }
 
   .page {
-    width: 83.0508474576%;
+    width: 75%;
     float: right;
     margin-right: 0;
-    padding-left: 4.2372881356%;
+    padding-left: 2%;
   }
 }
 

@@ -538,9 +538,19 @@ button:hover {
   cursor: pointer;
 }
 
+.inline-more-button {
+  margin: 0 0 0 0.75em;
+  vertical-align: baseline;
+}
+
 .more-button:hover {
   background: transparent;
   color: #1a386a;
+}
+
+.justify-list li {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 h1::before,

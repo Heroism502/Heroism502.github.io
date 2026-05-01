@@ -546,6 +546,12 @@ button:hover {
   margin: 0 0 0.5em;
 }
 
+.publication-note {
+  color: #7a8288;
+  font-size: 0.72em;
+  font-weight: normal;
+}
+
 .is-hidden {
   display: none;
 }

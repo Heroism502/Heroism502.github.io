@@ -396,12 +396,6 @@ button:hover {
   text-decoration: underline;
 }
 
-.author__intro {
-  max-width: 15em;
-  margin-bottom: 1em;
-  white-space: normal;
-}
-
 .author__urls_sm {
   display: block;
   padding: 0.25em;

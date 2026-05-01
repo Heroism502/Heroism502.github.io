@@ -18,7 +18,6 @@ styles.css
 script.js
 robots.txt
 .nojekyll
-博士简历_谢良.pdf
 ```
 
 After deployment, the free GitHub Pages address will be:
@@ -31,7 +30,7 @@ https://Heroism502.github.io/
 
 1. On GitHub, sign in to `Heroism502`.
 2. Create a new public repository named `Heroism502.github.io`.
-3. Upload or push the files in this folder to the repository root.
+3. Upload or push the website files in this folder to the repository root. Do not upload `博士简历_谢良.pdf` if you want to keep the original CV private.
 4. Open repository `Settings` -> `Pages`.
 5. Set `Source` to `Deploy from a branch`.
 6. Choose branch `main` and folder `/root`.

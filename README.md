@@ -42,7 +42,11 @@ https://Heroism502.github.io/
 
 ## Preview Access
 
-The current page is in owner-preview mode.
+The current page is in owner-preview mode. The default access code is:
+
+```text
+LiangXie@2026
+```
 
 This is a static-site visibility gate, plus `robots.txt` and `noindex` metadata. It prevents casual web viewing and indexing, but it is not a replacement for a private repository or server-side authentication.
 

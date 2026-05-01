@@ -103,6 +103,7 @@ const zhTranslations = {
       "<p>[ACM MMW’22] <strong>基于稀疏张量的端到端点云几何压缩与分析</strong></p><p><strong>Liang Xie</strong>, Wei Gao*, Huiming Zheng.</p>",
       "<p>[ICTAI’22] <strong>基于无监督路线生成的在线车辆跟踪精度提升</strong></p><p><strong>Liang Xie</strong>, Menghao Hu, Xinbei Bai*.</p>",
       "<p>[ICONIP’22] <strong>面向硬件友好与鲁棒性的人脸关键点检测方法</strong></p><p><strong>Liang Xie</strong>, Menghao Hu, Xinbei Bai*, Wenke Huang.</p>",
+      "<p>[QoMEX’26] <strong>面向 VQA 的时序质量聚合：基准与心理学启发模型</strong></p><p>Baoliang Chen, Changsheng Gao, Lingyu Zhu, <strong>Liang Xie</strong>, Hanwei Zhu, Zhijian Hao.</p>",
       "<p>[ACM MM’22] <strong>OpenPointCloud：基于深度学习的开源点云压缩算法库</strong></p><p>Wei Gao*, Hua Ye, Ge Li, Huiming Zheng, Yuyang Wu, <strong>Liang Xie</strong>.</p>",
     ],
     "-news": [

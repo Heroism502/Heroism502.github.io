@@ -347,15 +347,15 @@ button:hover {
 
 .sidebar .author__name {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: 1.8em;
+  font-size: 1.25em;
   font-weight: 700;
   color: #494e52;
 }
 
 .author__bio {
-  margin: 0 0 1.4em;
+  margin: 0 0 1em;
   color: #494e52;
-  font-size: 1.35em;
+  font-size: 0.95em;
   line-height: 1.45;
 }
 
@@ -384,9 +384,9 @@ button:hover {
 
 .author__urls li {
   position: relative;
-  margin-bottom: 0.65em;
+  margin-bottom: 0.45em;
   color: #494e52;
-  font-size: 1.25em;
+  font-size: 0.95em;
   line-height: 1.35;
   white-space: nowrap;
 }
@@ -404,7 +404,7 @@ button:hover {
 }
 
 .icon-row {
-  padding-left: 1.55em;
+  padding-left: 1.45em;
 }
 
 .icon-row::before {
@@ -504,6 +504,11 @@ button:hover {
   text-decoration: underline;
 }
 
+.about-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .publication-list {
   list-style-type: disc;
 }
@@ -532,7 +537,7 @@ h1::before,
   }
 
   .sidebar .author__name {
-    font-size: 1.8em;
+    font-size: 1.35em;
   }
 }
 

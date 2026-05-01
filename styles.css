@@ -325,9 +325,12 @@ button:hover {
 }
 
 .author__avatar img {
-  max-width: 175px;
+  width: 75px;
+  height: 75px;
   min-width: 75px;
+  max-width: 75px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .author__content {
@@ -495,11 +498,15 @@ h1::before,
 
   .author__avatar {
     display: block;
-    width: auto;
-    height: auto;
+    width: 175px;
+    height: 175px;
   }
 
   .author__avatar img {
+    width: 175px;
+    height: 175px;
+    max-width: 175px;
+    min-width: 175px;
     padding: 5px;
     border: 1px solid #f2f3f3;
   }

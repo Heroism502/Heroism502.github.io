@@ -1,6 +1,8 @@
 const ACCESS_HASH = "cc6193e4badc6e8675378809874b136cc677b9c2f5ab114129b874d717f3fdb7";
 const STORAGE_KEY = "liang-xie-homepage-unlocked";
 const LANGUAGE_STORAGE_KEY = "liang-xie-homepage-language";
+const VISIT_TOTAL_KEY = "liang-xie-homepage-visit-total";
+const VISIT_SESSION_KEY = "liang-xie-homepage-visit-session";
 
 const form = document.querySelector("#access-form");
 const input = document.querySelector("#access-code");
@@ -344,6 +346,30 @@ function setMoreButtonLabels(language = currentLanguage) {
   });
 }
 
+function updateInlineLanguageLabels(language) {
+  document.querySelectorAll("[data-i18n-en][data-i18n-zh]").forEach((element) => {
+    element.textContent = element.dataset[language === "zh" ? "i18nZh" : "i18nEn"];
+  });
+}
+
+function updateVisitStats() {
+  const totalElement = document.querySelector("#visit-total");
+  const sessionElement = document.querySelector("#visit-session");
+  if (!totalElement || !sessionElement) return;
+
+  try {
+    const total = Number(localStorage.getItem(VISIT_TOTAL_KEY) || 0) + 1;
+    const session = Number(sessionStorage.getItem(VISIT_SESSION_KEY) || 0) + 1;
+    localStorage.setItem(VISIT_TOTAL_KEY, String(total));
+    sessionStorage.setItem(VISIT_SESSION_KEY, String(session));
+    totalElement.textContent = String(total);
+    sessionElement.textContent = String(session);
+  } catch {
+    totalElement.textContent = "1";
+    sessionElement.textContent = "1";
+  }
+}
+
 function applyLanguage(language) {
   language = language === "zh" ? "zh" : "en";
   currentLanguage = language;
@@ -386,6 +412,7 @@ function applyLanguage(language) {
   });
 
   setMoreButtonLabels(language);
+  updateInlineLanguageLabels(language);
 
   if (languageButton) {
     languageButton.textContent = language === "zh" ? "EN" : "中文";
@@ -465,4 +492,5 @@ function initLanguageToggle() {
 }
 
 window.toggleLanguage = toggleLanguage;
+updateVisitStats();
 initLanguageToggle();

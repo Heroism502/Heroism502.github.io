@@ -589,6 +589,19 @@ button:hover {
   text-justify: inter-word;
 }
 
+.visit-stats {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #f2f3f3;
+  color: #7a8288;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.visit-stats strong {
+  color: #494e52;
+}
+
 .lab-main .page {
   width: 100%;
   float: none;

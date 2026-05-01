@@ -418,6 +418,7 @@ form?.addEventListener("submit", async (event) => {
 document.querySelectorAll(".collapsible-list").forEach((list) => {
   const visibleCount = Number(list.dataset.visible || 5);
   const items = Array.from(list.children);
+  const linkedButton = list.dataset.button ? document.querySelector(list.dataset.button) : null;
   let previousElement = list.previousElementSibling;
   let previousButton = null;
   while (previousElement && previousElement.tagName !== "H1") {
@@ -427,7 +428,7 @@ document.querySelectorAll(".collapsible-list").forEach((list) => {
   const nextButton = list.nextElementSibling?.classList.contains("more-button")
     ? list.nextElementSibling
     : null;
-  const button = previousButton || nextButton;
+  const button = linkedButton || previousButton || nextButton;
 
   if (!button || items.length <= visibleCount) {
     button?.classList.add("is-hidden");
